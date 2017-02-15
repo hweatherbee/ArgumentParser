@@ -22,32 +22,15 @@ public class VolumeCalculatorTest {
 		assertEquals(len, vc.getLength());
 		assertEquals(width, vc.getWidth());
 		assertEquals(height, vc.getHeight());
+		
+		int calculatedValue = vc.getVolme();
+		assertEquals(70, calculatedValue);
     }
 
-    @Test
-    public final void testFindMaximumElement2() {
-
-        int[] testInput = new int[] { 117, 56, 38, 11, 0 };
-        int expectedResult = 117;
-
-        Finder myFinder = new Finder();
-        int actualResult = myFinder.findMaximumElement(testInput);
-
-        assertTrue("Test input with descending order",
-                actualResult == expectedResult);
+    @Test(expected= NumberFormatException.class)
+    public void testUnrecognizedArgument() {
+		
     }
 
-    @Test
-    public final void testFindMaximumElement3() {
-
-        int[] testInput = new int[] { 42, 11, 38, 75, 14 };
-        int expectedResult = 75;
-
-        Finder myFinder = new Finder();
-        int actualResult = myFinder.findMaximumElement(testInput);
-
-        assertTrue("Test input with random order",
-                actualResult == expectedResult);
-    }
-
+    
 }
