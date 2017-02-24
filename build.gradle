@@ -1,15 +1,30 @@
+buildscript {
+    dependencies {
+        classpath files(mkdir('build/classes/main'))
+        classpath group: "org.robotframework", name:"swinglibrary", version: "1.9.6"
+    }
+}
+
+
+plugins {
+    id 'org.roboscratch.robot' version '0.1.1'
+}
+
 apply plugin: 'java'
 apply plugin: 'jacoco'
+apply plugin: 'application'
+
 
 sourceCompatibility = 1.7
 version = '1.0'
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Tic Tac Toe', 
+        attributes 'Implementation-Title': 'ArgumentParser', 
                    'Implementation-Version': version, 
-                   'Main-Class': 'edu.jsu.mcis.TicTacToe'
+                   'Main-Class': 'edu.jsu.mcis.parseArgument'
     }
 }
+mainClassName="edu.jsu.mcis.parseArgument"
 
 repositories {
     mavenCentral()
@@ -44,3 +59,8 @@ if(hasProperty("Xlint:unchecked")) {
         options.compilerArgs << "-Xlint:unchecked" 
     }
 }
+
+
+mainClassName = 'edu.jsu.mcis.parseArgument'
+runrobot.debugfile = 'debug.log'
+runrobot.dependsOn build
