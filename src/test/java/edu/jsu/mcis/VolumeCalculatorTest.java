@@ -1,3 +1,4 @@
+
 package edu.jsu.mcis;
 
 import static org.junit.Assert.*;
@@ -77,14 +78,4 @@ public class VolumeCalculatorTest {
 		temp = pa.getArg("length");
 		assertEquals("val1", temp.getValue());
 	}	
-	//adding args
-	//checking sets and gets
-	//parseArgs check Argument.Type
-	//check value
-	//check right amount of args
-	//too little args
-	//too many args 
-	//-h
-
-
 }
